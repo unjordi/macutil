@@ -5,7 +5,7 @@
 
 
 > [!NOTE]
-> I'm discontinuing Macutil due to Apples Limited access to changing system options. They restricted it down too much these past couple releases and is currently on HOLD for any future releases while I assess future development. 
+> Since the project is still in active development, you may encounter some issues. Please consider [submitting feedback](https://github.com/ChrisTitusTech/macutil/issues) if you do.
 
 # HEAVY DEVELOPMENT
 

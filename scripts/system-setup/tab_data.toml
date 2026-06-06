@@ -39,6 +39,11 @@ description = "Forces the numeric keypad decimal key to produce a period (.) ins
 script = "fix-numpad-decimal.sh"
 
 [[data.entries]]
+name = "Remove Logitech Options / Options+"
+description = "Completely removes Logitech Options and Options+: stops processes, unloads the LaunchAgent, removes system and user files, the kext, and resets all TCC privacy permissions. Restart recommended after."
+script = "remove-logitech-options.sh"
+
+[[data.entries]]
 name = "Remove Adobe Office Add-ins"
 description = "Removes Adobe add-ins (SaveAsAdobePDF, PDFMaker) that Adobe installs in Word, Excel, and PowerPoint. Cleans up the Office startup folder. Restart Office apps after applying."
 script = "remove-adobe-office-addins.sh"
