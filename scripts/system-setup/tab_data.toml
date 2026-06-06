@@ -39,6 +39,11 @@ description = "Forces the numeric keypad decimal key to produce a period (.) ins
 script = "fix-numpad-decimal.sh"
 
 [[data.entries]]
+name = "Remove Adobe Office Add-ins"
+description = "Removes Adobe add-ins (SaveAsAdobePDF, PDFMaker) that Adobe installs in Word, Excel, and PowerPoint. Cleans up the Office startup folder. Restart Office apps after applying."
+script = "remove-adobe-office-addins.sh"
+
+[[data.entries]]
 name = "Adobe URL Block List - Enable"
 description = "Blocks 948 Adobe tracking, licensing, and activation domains/IPs by adding them to /etc/hosts. Prevents Adobe apps from phoning home for license checks and telemetry. Flushes DNS cache after applying."
 script = "adobe-hosts-block.sh"
