@@ -22,3 +22,23 @@ script = "fix-finder.sh"
 name = "Remove Animations"
 description = "This script is designed to remove snap packages and the snapd service from your system"
 script = "remove-animations.sh"
+
+[[data.entries]]
+name = "Screenshots to Clipboard"
+description = "Makes all screenshot shortcuts (cmd+shift+3/4/5) copy to clipboard instead of saving to a file. Use cmd+shift+5 to access the full screenshot tool if you need to save to file."
+script = "configure-screenshots.sh"
+
+[[data.entries]]
+name = "Configure Recent Items"
+description = "Increases the recent documents limit to 50 for all apps and Apple Menu. Creates a Finder sidebar Smart Folder showing files used in the last 30 days, excluding ~/Code."
+script = "configure-recents.sh"
+
+[[data.entries]]
+name = "Fix Numpad Decimal Key"
+description = "Forces the numeric keypad decimal key to produce a period (.) instead of a comma. macOS defaults to comma in Latin American locales. Log out and back in after applying."
+script = "fix-numpad-decimal.sh"
+
+[[data.entries]]
+name = "Adobe URL Block List - Enable"
+description = "Blocks 948 Adobe tracking, licensing, and activation domains/IPs by adding them to /etc/hosts. Prevents Adobe apps from phoning home for license checks and telemetry. Flushes DNS cache after applying."
+script = "adobe-hosts-block.sh"
