@@ -34,8 +34,8 @@ description = "Increases the recent documents limit to 50 for all apps and Apple
 script = "configure-recents.sh"
 
 [[data.entries]]
-name = "Fix Numpad Decimal Key"
-description = "Forces the numeric keypad decimal key to produce a period (.) instead of a comma. macOS defaults to comma in Latin American locales. Log out and back in after applying."
+name = "Fix Numpad Decimal Key (session)"
+description = "Remaps the numpad decimal key to type a period (.) for the current login session, on ANY layout (e.g. Spanish - ISO renders it as a comma). Uses hidutil (HID usage 0x63 -> main period 0x37). NOT permanent: hidutil mappings only apply to the session that set them (launchd canNOT persist this) and reset on reboot -- re-run as needed. For a lasting fix use a custom keyboard layout instead."
 script = "fix-numpad-decimal.sh"
 
 [[data.entries]]
@@ -47,6 +47,11 @@ script = "remove-logitech-options.sh"
 name = "Remove Adobe Office Add-ins"
 description = "Removes Adobe add-ins (SaveAsAdobePDF, PDFMaker) that Adobe installs in Word, Excel, and PowerPoint. Cleans up the Office startup folder. Restart Office apps after applying."
 script = "remove-adobe-office-addins.sh"
+
+[[data.entries]]
+name = "Outlook - Force Legacy (Full Mailbox Sync)"
+description = "Forces Microsoft Outlook for Mac into classic/legacy mode (EnableNewOutlook=0). The 'new Outlook' (Hx) engine only caches a few months locally and has no sync-window setting; legacy mode downloads the ENTIRE Exchange/M365 mailbox for full offline access and local search. Quit and reopen Outlook after applying. Note: Microsoft is deprecating legacy Outlook."
+script = "outlook-force-legacy.sh"
 
 [[data.entries]]
 name = "Adobe URL Block List - Enable"
