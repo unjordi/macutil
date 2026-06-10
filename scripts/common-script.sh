@@ -7,6 +7,7 @@ RED=''
 YELLOW=''
 CYAN=''
 GREEN=''
+ESCALATION_TOOL=''
 
 command_exists() {
 for cmd in "$@"; do
@@ -82,6 +83,25 @@ checkCurrentDirectoryWritable() {
     fi
 }
 
+checkEscalationTool() {
+    ## Pick the privilege-escalation tool used by scripts as $ESCALATION_TOOL.
+    ## Empty when already root so commands run directly; otherwise sudo/doas
+    ## (which will prompt for a password when needed).
+    if [ -n "$ESCALATION_TOOL" ]; then
+        return 0
+    elif [ "$(id -u)" -eq 0 ]; then
+        ESCALATION_TOOL=""
+    elif command_exists sudo; then
+        ESCALATION_TOOL="sudo"
+    elif command_exists doas; then
+        ESCALATION_TOOL="doas"
+    else
+        printf "%b\n" "${RED}No privilege escalation tool found (need sudo or doas, or run as root).${RC}"
+        exit 1
+    fi
+}
+
 checkEnv() {
+    checkEscalationTool
     checkPackageManager
 }
